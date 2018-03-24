@@ -1,1 +1,9 @@
 cp zsh/pksh.zsh-theme ~/.oh-my-zsh/custom
+cp .bash_aliases ~/
+cp .bash_profile ~/
+cp .bashrc ~/
+cp .git-completion.bash ~/
+cp .gitconfig ~/
+cp .gitignore_global ~/
+cp .zshrc ~/
+

@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"DotENV",
+		"Ethereum",
+		"Javascript Beautify",
+		"Package Control",
+		"SCSS",
+		"SublimeLinter-html-tidy",
+		"Vue Syntax Highlight"
+	]
+}

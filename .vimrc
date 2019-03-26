@@ -11,7 +11,29 @@ endif
 " --------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'posva/vim-vue'
+Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
+" --------------------------
+" Plugin configs
+let g:rustfmt_autosave = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 " --------------------------
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>

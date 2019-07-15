@@ -19,7 +19,12 @@ Plug 'posva/vim-vue'
 Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'TovarishFin/vim-solidity'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+let g:polyglot_disabled = ['solidity']
+
 " --------------------------
 " Plugin configs
 let g:rustfmt_autosave = 1

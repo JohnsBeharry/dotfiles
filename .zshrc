@@ -1,6 +1,7 @@
+export LC_ALL=en_US.UTF-8
 source ~/.bash_profile
 # Path to your oh-my-zsh installation.
-export ZSH=/home/johns/.oh-my-zsh
+export ZSH=/Users/johns/.oh-my-zsh
 ZSH_THEME="pksh"
 HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to enable command auto-correction.
@@ -53,8 +54,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="atom ~/.zshrc"
-alias ohmyzsh="atom ~/.oh-my-zsh"
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
 
 export NVM_DIR="/Users/johns/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

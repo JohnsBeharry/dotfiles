@@ -9,6 +9,9 @@ go get github.com/golang/lint/golint
 # javascript stuff
 brew install nvm
 nvm install node
+
+# ethereum development
+curl https://raw.githubusercontent.com/jacqueswww/vim-vyper/master/install.sh | sh
 npm install -g solc truffle solium
 
 # editor
@@ -20,7 +23,7 @@ brew cask install sublime-text
 cp .git-completion.bash ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
-npm i -g diff-so-fancy
+brew install diff-so-fancy
 
 # oh my zsh
 brew install zsh

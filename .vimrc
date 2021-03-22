@@ -11,6 +11,8 @@ endif
 " --------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
@@ -21,6 +23,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'TovarishFin/vim-solidity'
 Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 let g:polyglot_disabled = ['solidity']
@@ -39,6 +45,20 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+" markdown configs
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " --------------------------
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -63,8 +83,8 @@ set backspace=2
 "
 " Tab-related settings
 "set expandtab
-"set shiftwidth=4
-"set smarttab
+set shiftwidth=4
+set smarttab
 set tabstop=4
 "
 " Enable highlighting of misspelled terms
@@ -72,6 +92,10 @@ set tabstop=4
 "
 " I don't like syntax highlighting
 syntax on
+"
+" Indentations 
+set autoindent
+set cindent
 "
 " Always display row/column info 
 set ruler
@@ -82,6 +106,8 @@ set nohlsearch
 " Status line improvements from Kim Schultz ("Hacking Vim")
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set laststatus=2
+" HTML Completion
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 "
 " Store backup files in a specific directory
 " set backupdir=~/.backups
@@ -92,6 +118,8 @@ set backupext=~
 "
 " Force creation of backup files 
 set backup
+set backupdir=./.backup,.,/tmp
+set directory=.,./.backup,/tmp
 "
 " Use UTF-8 as the default text encoding
 set encoding=utf-8

@@ -39,3 +39,5 @@ cp .zshrc ~/
 brew install tmux
 cp .tmux.conf ~/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew tap homebrew/cask-fonts
+brew install --cask font-im-writing-nerd-font
